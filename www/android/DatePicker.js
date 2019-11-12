@@ -3,6 +3,8 @@
  * Reused and ported to Android plugin by Daniel van 't Oever
  */
 
+
+
 /**
  * Constructor
  */
@@ -26,12 +28,16 @@ DatePicker.prototype.ANDROID_THEMES = {
  */
 DatePicker.prototype.show = function(options, cb, errCb) {
 
-	if (options.date && options.date instanceof Date) {
-		options.date = (options.date.getMonth() + 1) + "/" +
-					   (options.date.getDate()) + "/" +
-					   (options.date.getFullYear()) + "/" +
-					   (options.date.getHours()) + "/" +
-					   (options.date.getMinutes());
+	// if (options.date && options.date instanceof Date) {
+	if (options.date) {
+		console.log('options.date', options.date)
+
+	if (options.date) {
+		options.date = (options.date.month() + 1) + "/" +
+					   (options.date.date()) + "/" +
+					   (options.date.year()) + "/" +
+					   (options.date.hour()) + "/" +
+					   (options.date.minute());
 	}
 
 	var defaults = {
@@ -60,7 +66,10 @@ DatePicker.prototype.show = function(options, cb, errCb) {
 		if(message != 'error'){
 			var timestamp = Date.parse(message);
 			if(isNaN(timestamp) == false) {
-				cb(new Date(message));
+				console.log('message', message);
+				console.log('window.moment', window.moment);
+				console.log('window.moment(message)', window.moment(message));
+				cb(window.moment(message));
 			}
 	        else {
 	            cb();
