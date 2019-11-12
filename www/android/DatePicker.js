@@ -65,7 +65,9 @@ DatePicker.prototype.show = function(options, cb, errCb) {
 		if(message != 'error'){
 			var timestamp = Date.parse(message);
 			if(isNaN(timestamp) == false) {
-				console.log('message', message);
+				console.log('message1', message); 
+				console.log('message2', new Date(message));
+				console.log('message3', new Date(message).getHours());
 				console.log('window.moment', window.moment);
 				console.log('window.moment(message)', window.moment(message));
 				cb(window.moment(message));
