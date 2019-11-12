@@ -30,12 +30,13 @@ DatePicker.prototype.show = function(options, cb, errCb) {
 
 	// if (options.date && options.date instanceof Date) {
 	if (options.date) {
-		console.log('options.date', options.date);
 		options.date = (options.date.month() + 1) + "/" +
 					   (options.date.date()) + "/" +
 					   (options.date.year()) + "/" +
 					   (options.date.hour()) + "/" +
 					   (options.date.minute());
+		
+		console.log('options.date1', options.date);
 	}
 
 	var defaults = {
