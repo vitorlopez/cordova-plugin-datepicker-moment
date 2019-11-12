@@ -30,9 +30,7 @@ DatePicker.prototype.show = function(options, cb, errCb) {
 
 	// if (options.date && options.date instanceof Date) {
 	if (options.date) {
-		console.log('options.date', options.date)
-
-	if (options.date) {
+		console.log('options.date', options.date);
 		options.date = (options.date.month() + 1) + "/" +
 					   (options.date.date()) + "/" +
 					   (options.date.year()) + "/" +
